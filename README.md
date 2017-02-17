@@ -1,13 +1,13 @@
-# genosine
+# Genosine
 Console-wrapper for Sinus Creator by The Gang that generates 8-bit sine tables for the ACME 6502 compiler. To be used standalone in custom build systems.
 
-## usage
+## Usage
 `genosine <amount> <min> <max> <startAngle> <stopAngle> <amplitude> <frequency>`
 
-## example usage
+## Example usage
 `genosine 256 0 100 0 360 100 0`
 
-## example output
+## Example output
 ~~~
 !byte $3f,$41,$42,$44,$45,$47,$48,$4a
 !byte $4b,$4d,$4e,$50,$52,$53,$54,$56
