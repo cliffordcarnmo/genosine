@@ -8,8 +8,8 @@
 #include <math.h>
 
 int main(int argc, char **argv) {
-	if (argc != 8) {
-		printf("Usage: %s <amount> <min> <max> <startAngle> <stopAngle> <amplitude> <frequency>\n", argv[0]);
+	if (argc != 9) {
+		printf("Usage: %s <amount> <min> <max> <startAngle> <stopAngle> <amplitude> <frequency> <mode>\n", argv[0]);
 	}
 	else {
 		unsigned int amount = (unsigned int)atoi(argv[1]);
@@ -19,6 +19,7 @@ int main(int argc, char **argv) {
 		unsigned int stopAngle = (unsigned int)atoi(argv[5]);
 		unsigned int amplitude = (unsigned int)atoi(argv[6]);
 		unsigned int frequency = (unsigned int)atoi(argv[7]);
+		unsigned int mode = (unsigned int)atoi(argv[8]);
 		unsigned int chars = 0;
 		unsigned int dist = max - min;
 		double acur, astart, astop, adist, scur, curv;
@@ -33,7 +34,14 @@ int main(int argc, char **argv) {
 			astop = (pig2)*(double)frequency + (pig2)*(double)stopAngle / 360;
 			adist = astop - astart;
 			acur = ((double)i*adist / (double)(amount - 1)) + astart;
-			scur = sin(acur)*(double)amplitude / 100;
+			
+			if (mode == 0) {
+				scur = sin(acur)*(double)amplitude / 100;
+			}
+			else if (mode == 1) {
+				scur = cos(acur)*(double)amplitude / 100;
+			}
+			
 			curv = (scur*dist + dist) / 2 + min;
 
 			printf("$%02x", (uint8_t)curv);
