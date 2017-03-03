@@ -2,10 +2,12 @@
 Console-wrapper for Sinus Creator by The Gang that generates 8-bit sine tables for the ACME 6502 compiler. To be used standalone in custom build systems.
 
 ## Usage
-`genosine <amount> <min> <max> <startAngle> <stopAngle> <amplitude> <frequency>`
+`genosine <amount> <min> <max> <startAngle> <stopAngle> <amplitude> <frequency> <mode>`
 
 ## Example usage
-`genosine 256 0 100 0 360 100 0`
+`genosine 256 0 100 0 360 100 0 0`
+
+The `mode` argument works with `0 = sin` and `1 = cos`.
 
 ## Example output
 ~~~
