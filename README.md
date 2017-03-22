@@ -1,5 +1,5 @@
 # genosine
-Console-wrapper for Sinus Creator by The Gang that generates 8-bit sine tables for the ACME 6502 compiler. To be used standalone in custom build systems.
+Console-wrapper for Sinus Creator by The Gang that generates 8-bit sin/cos tables. To be used standalone in custom build systems, for example [c64-devkit](https://github.com/cliffordcarnmo/c64-devkit).
 
 ## Building
 `gcc genosine.c -o genosine -lm`
